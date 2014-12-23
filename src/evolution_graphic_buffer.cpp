@@ -76,7 +76,7 @@ GraphicHandle Buffer::GetGraphicHandle(){
     return this->m_handle;
 }
 
-GraphicResult::_RESULT Buffer::CreateVertexBuffer(GraphicManager* graphic_manager, void* buffer, u32 buffer_count, u32 single_size, bool dynamic){
+GraphicResult::_RESULT Buffer::CreateVertexBuffer(GraphicManager* graphic_manager, const void* buffer, u32 buffer_count, u32 single_size, bool dynamic){
     HRESULT hr = S_OK;
     try{
         this->m_array_count = buffer_count;
@@ -121,12 +121,13 @@ GraphicResult::_RESULT Buffer::CreateVertexBuffer(GraphicManager* graphic_manage
     return GraphicResult::RESULT_OK;
 }
 
-GraphicResult::_RESULT Buffer::CreateIndexBuffer(GraphicManager* graphic_manager, void* buffer, u32 buffer_count, u32 single_size){
+GraphicResult::_RESULT Buffer::CreateIndexBuffer(GraphicManager* graphic_manager, const void* buffer, u32 buffer_count, u32 single_size){
     HRESULT hr = S_OK;
     try{
         this->m_array_count = buffer_count;
         this->m_single_size = single_size;
 
+        //インデックスバッファは更新頻度が低いため
         this->mp_buffer = NEW u8[buffer_count * single_size];
         memcpy(this->mp_buffer, buffer, this->m_single_size  * this->m_array_count);
 
@@ -141,7 +142,7 @@ GraphicResult::_RESULT Buffer::CreateIndexBuffer(GraphicManager* graphic_manager
 
         D3D11_SUBRESOURCE_DATA InitData;
         ZeroMemory(&InitData, sizeof(InitData));
-        InitData.pSysMem = this->mp_buffer;
+        InitData.pSysMem = buffer;
 
         hr = graphic_manager->GetID3D11Device()->CreateBuffer(&bd, &InitData, &this->mp_d3d11_buffer);
 
@@ -161,6 +162,7 @@ GraphicResult::_RESULT Buffer::CreateIndexBuffer(GraphicManager* graphic_manager
     }
     return GraphicResult::RESULT_OK;
 }
+
 //BufferのSingleサイズ
 u32 Buffer::GetSingleSize(){
     return this->m_single_size;
@@ -220,16 +222,19 @@ ID3D11Buffer* Buffer::GetID3D11Buffer()const{
 }
 
 GraphicResult::_RESULT Buffer::Execute(const CommandProperty& command_data, ID3D11DeviceContext* context, IDXGISwapChain* swapchain){
-
     D3D11_MAPPED_SUBRESOURCE map_resource;
     if (this->m_type == D3D11_USAGE_DYNAMIC){
         context->Map(this->mp_d3d11_buffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &map_resource);
-        memcpy(map_resource.pData, this->mp_buffer, this->m_array_count * this->m_single_size);
+        memcpy(map_resource.pData, (void*)command_data.val_ptr, command_data.val_size);
         context->Unmap(this->mp_d3d11_buffer, 0);
 
     }
     else{
-        context->UpdateSubresource(this->mp_d3d11_buffer, 0, NULL, this->mp_buffer, 0, 0);
+        context->UpdateSubresource(this->mp_d3d11_buffer, 0, NULL, (void*)command_data.val_ptr, 0, 0);
     }
     return GraphicResult::RESULT_OK;
+}
+
+void Buffer::__DeleteTempBuffer(){
+    EVOLUTION_DELETE_ARRAY(this->mp_buffer);
 }

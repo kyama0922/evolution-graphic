@@ -1,5 +1,5 @@
-﻿#ifndef __EVOLUTION_GRAPHIC_H__
-#define __EVOLUTION_GRAPHIC_H__
+﻿#ifndef __EVOLUTION_GRAPHIC__
+#define __EVOLUTION_GRAPHIC__
 
 //標準グラフィックインターフェイス
 #include "evolution_graphic_interface.h"
@@ -11,4 +11,4 @@
 
 #include "evolution_graphic_num.h"
 
-#endif // !__EVOLUTION_GRAPHIC_H__
+#endif // !__EVOLUTION_GRAPHIC__

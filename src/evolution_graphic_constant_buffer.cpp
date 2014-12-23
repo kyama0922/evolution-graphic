@@ -102,7 +102,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_FLOAT2:
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_VECTOR2:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -113,7 +113,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_FLOAT3:
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_VECTOR3:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -124,7 +124,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_FLOAT4:
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_VECTOR4:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -134,7 +134,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             this->mp_values[i].array_count = 0;
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_MATRIX:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -153,7 +153,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_FLOAT2_ARRAY:
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_VECTOR2_ARRAY:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -164,7 +164,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_FLOAT3_ARRAY:
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_VECTOR3_ARRAY:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -175,7 +175,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_FLOAT4_ARRAY:
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_VECTOR4_ARRAY:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -185,7 +185,7 @@ GraphicResult::_RESULT ConstantBuffer::Create(GraphicManager* graphic_manager, c
             this->mp_values[i].array_count = layout[i].ArrayCount;
             break;
         case EVOLUTION::GRAPHIC::CONSTANT_BUFFER_INSTANCE_TYPE::_MATRIX_ARRAY:
-            if (address % 16 != 0)
+            if ((address & 0x0000000F) != 0)
             {
                 address += 16 - (address & 0x0000000F);
             }
@@ -485,7 +485,7 @@ void ConstantBuffer::SetValueMatrixArray(s32 index, const MATH::Matrix* value, s
 GraphicResult::_RESULT ConstantBuffer::ChangeValue(){
     IGraphicD3DExecute* myself;
     this->QueryInterface( EVOLUTION::EVOLUTION_GUID::IID_IGraphicD3DExecute, (void**)&myself);
-    return this->mp_graphic_command->SetCommand(myself, (ptr_t)this->mp_buffer, this->m_single_size);
+    return this->mp_graphic_command->SetCommand(myself, (ptr_t)this->mp_buffer, this->m_array_count * this->m_single_size);
 }
 
 //Direct3Dコマンドの実行
@@ -493,12 +493,12 @@ GraphicResult::_RESULT ConstantBuffer::Execute(const CommandProperty& command_da
     D3D11_MAPPED_SUBRESOURCE map_resource;
     if (this->m_type == D3D11_USAGE_DYNAMIC){
         context->Map(this->mp_d3d11_buffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &map_resource);
-        memcpy(map_resource.pData, this->mp_buffer, this->m_array_count * this->m_single_size);
+        memcpy(map_resource.pData, (void*)command_data.val_ptr, command_data.val_size );
         context->Unmap(this->mp_d3d11_buffer, 0);
 
     }
     else{
-        context->UpdateSubresource(this->mp_d3d11_buffer, 0, NULL, this->mp_buffer, 0, 0);
+        context->UpdateSubresource(this->mp_d3d11_buffer, 0, NULL, (void*)command_data.val_ptr, 0, 0);
     }
     return GraphicResult::RESULT_OK;
 }

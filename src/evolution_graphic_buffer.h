@@ -37,8 +37,8 @@ namespace EVOLUTION{
             Buffer( IGraphicCommand* graphic_command);
             ~Buffer();
 
-            GraphicResult::_RESULT CreateVertexBuffer(GraphicManager* graphic_manager, void* buffer, u32 buffer_count, u32 single_size, bool dynamic);
-            GraphicResult::_RESULT CreateIndexBuffer(GraphicManager* graphic_manager, void* buffer, u32 buffer_count, u32 single_size);
+            GraphicResult::_RESULT CreateVertexBuffer(GraphicManager* graphic_manager, const void* buffer, u32 buffer_count, u32 single_size, bool dynamic);
+            GraphicResult::_RESULT CreateIndexBuffer(GraphicManager* graphic_manager, const void* buffer, u32 buffer_count, u32 single_size);
 
             //BufferのSingleサイズ
             u32 GetSingleSize();
@@ -56,6 +56,9 @@ namespace EVOLUTION{
             GraphicResult::_RESULT Execute(const CommandProperty& command_data, ID3D11DeviceContext* context, IDXGISwapChain* swapchain);
 
             ID3D11Buffer* GetID3D11Buffer()const;
+
+            //裏コマンド
+            void __DeleteTempBuffer();
         };
 
     }

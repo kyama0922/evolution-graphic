@@ -151,9 +151,25 @@ GraphicResult::_RESULT GraphicFactory::CreateFrameBuffer(IFrameBuffer** frame_bu
     return (*frame_buffer == nullptr) ? GraphicResult::_RESULT::CREATE_FAILED : GraphicResult::RESULT_OK;
 }
 //バッファの作成
-GraphicResult::_RESULT GraphicFactory::CreateVertexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, void* buffer_address, u32 buffer_count, u32 single_size){
+GraphicResult::_RESULT GraphicFactory::CreateVertexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, const void* buffer_address, u32 buffer_count, u32 single_size){
     Buffer* tmp_buffer = NEW Buffer(graphic_command);
-    tmp_buffer->CreateVertexBuffer(this->mp_graphic_manager, buffer_address, buffer_count, single_size , true);
+    tmp_buffer->CreateVertexBuffer(this->mp_graphic_manager, buffer_address, buffer_count, single_size, true);
+    *buffer = tmp_buffer;
+    return GraphicResult::RESULT_OK;
+}
+
+//バッファの作成
+GraphicResult::_RESULT GraphicFactory::CreateIndexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, const u16* buffer_address, u32 buffer_count){
+    Buffer* tmp_buffer = NEW Buffer(graphic_command);
+    tmp_buffer->CreateIndexBuffer(this->mp_graphic_manager, buffer_address, buffer_count, EVOLUTION::Byte * 2);
+    *buffer = tmp_buffer;
+    return GraphicResult::RESULT_OK;
+}
+
+//バッファの作成
+GraphicResult::_RESULT GraphicFactory::CreateIndexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, const u32* buffer_address, u32 buffer_count){
+    Buffer* tmp_buffer = NEW Buffer(graphic_command);
+    tmp_buffer->CreateIndexBuffer(this->mp_graphic_manager, buffer_address, buffer_count, EVOLUTION::Byte * 4);
     *buffer = tmp_buffer;
     return GraphicResult::RESULT_OK;
 }

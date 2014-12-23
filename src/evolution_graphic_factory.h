@@ -44,7 +44,11 @@ namespace EVOLUTION{
             //フレームバッファの作成
             GraphicResult::_RESULT CreateFrameBuffer(IFrameBuffer** frame_buffer, IGraphicCommand* graphic_command, s32 width, s32 heigth, FORMAT_TYPE::_FORMAT_TYPE format);
             //バッファの作成
-            GraphicResult::_RESULT CreateVertexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, void* buffer_address, u32 buffer_count, u32 single_size);
+            GraphicResult::_RESULT CreateVertexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, const void* index_buffer_address, u32 buffer_count, u32 single_size);
+            //インデックスバッファの作成
+            GraphicResult::_RESULT CreateIndexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, const u16* index_buffer_address, u32 buffer_count);
+            //インデックスバッファの作成
+            GraphicResult::_RESULT CreateIndexBuffer(IBuffer** buffer, IGraphicCommand* graphic_command, const u32* index_buffer_address, u32 buffer_count);
             //レンダリングパイプライン作成
             GraphicResult::_RESULT CreateRenderingPipeline(IRenderingPipeline** rendering_pipeline, IGraphicCommand* graphic_command);
             //グラフィックコマンド作成
