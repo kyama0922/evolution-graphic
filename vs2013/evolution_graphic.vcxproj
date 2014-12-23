@@ -19,14 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\core\vs2013\evolution_core.vcxproj">
-      <Project>{9e6fb115-8d55-4a88-8a54-63d40aac73f1}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\utility\vs2013\evolution_utility.vcxproj">
-      <Project>{d8293f0e-1868-4cf6-b099-6eff4dbc2ef9}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\evolution_graphic.h" />
     <ClInclude Include="..\evolution_graphic_interface.h" />
     <ClInclude Include="..\evolution_graphic_interfaceEx.h" />
@@ -123,6 +115,14 @@
     <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC7Encode_TryMode02CS.inc" />
     <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC7Encode_TryMode137CS.inc" />
     <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC7Encode_TryMode456CS.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\evolution-core\vs2013\evolution_core.vcxproj">
+      <Project>{9e6fb115-8d55-4a88-8a54-63d40aac73f1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\evolution-utility\vs2013\evolution_utility.vcxproj">
+      <Project>{d8293f0e-1868-4cf6-b099-6eff4dbc2ef9}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{85C108B1-C444-44BC-ACA9-E5DC8C680BD1}</ProjectGuid>

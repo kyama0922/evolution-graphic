@@ -2,6 +2,9 @@
 #define __EVOLUTION_GRAPHIC_INTERFACE_IMPLEMENT_H__
 
 #include <evolution.h>
+
+#include <evolution-utility/evolution_utility.h>
+
 #include <d3d11.h>
 #include <d3dcompiler.h>
 
@@ -11,7 +14,7 @@
 //グラフィックException
 #include "evolution_graphic_exception.h"
 
-#include <utility/evolution_utility.h>
+
 
 namespace EVOLUTION{
     namespace GRAPHIC{

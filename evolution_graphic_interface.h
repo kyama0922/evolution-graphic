@@ -2,7 +2,7 @@
 #define __EVOLUTION_GRAPHIC_INTERFACE_H__
 
 #include <evolution.h>
-#include <utility/etc/evolution_color.h>
+#include <evolution-utility/etc/evolution_color.h>
 
 #include "evolution_graphic_num.h"
 
