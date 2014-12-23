@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\implement">
+      <UniqueIdentifier>{e74436a2-30f2-46ea-ab59-2cd2bd137087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\shader">
+      <UniqueIdentifier>{c098f895-9147-4228-ba10-bf1fc2dc5f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\implement\shader">
+      <UniqueIdentifier>{47d16bbb-b16f-4a84-aab8-7c13a2762c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\texture">
+      <UniqueIdentifier>{1e87ff66-6e55-4a52-8062-ee9a42ba2bdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\texture\directXtex">
+      <UniqueIdentifier>{64ccb5b6-068a-4051-a5c1-8db87ef38154}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\evolution_graphic.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\evolution_graphic_interfaceEx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\evolution_graphic_interface.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\evolution_graphic_num.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\evolution_graphic_result.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_exception.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_interface_implement.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_interfaceEx_implement.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_manager.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_command.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_factory.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_rendering_pipeline.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_texture2d.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_framebuffer.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_depthbuffer.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_buffer.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_geometry_shader.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_input_layout.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_pixel_shader.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_vertex_shader.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_compute_shader.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_domain_shader.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_shader.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_shader_manager.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_shader_chain.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_hull_shader.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shader\evolution_graphic_d3dinclude.h">
+      <Filter>ヘッダー ファイル\implement\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\texture\DirectXTex\BC.h">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\texture\DirectXTex\BCDirectCompute.h">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\texture\DirectXTex\DDS.h">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\texture\DirectXTex\DirectXTex.h">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\texture\DirectXTex\DirectXTexP.h">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\texture\DirectXTex\Filters.h">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\texture\DirectXTex\scoped.h">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_texture_loader.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_sampler_state.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_depth_stencil_state.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_rasterrizer.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_blend_state.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\evolution_graphic_constant_buffer.h">
+      <Filter>ヘッダー ファイル\implement</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\evolution_graphic_factory.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_framebuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_manager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_exception.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_command.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_shader_manager.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_input_layout.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_pixel_shader.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_vertex_shader.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_compute_shader.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_domain_shader.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_geometry_shader.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_shader_chain.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shader\evolution_graphic_hull_shader.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_rendering_pipeline.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_buffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_texture2d.cpp">
+      <Filter>ソース ファイル\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\BC.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\BC4BC5.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\BC6HBC7.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\BCDirectCompute.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexCompress.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexCompressGPU.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexConvert.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexD3D11.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexDDS.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexFlipRotate.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexImage.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexMipmaps.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexMisc.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexNormalMaps.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexPMAlpha.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexResize.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexTGA.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexUtil.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\DirectXTex\DirectXTexWIC.cpp">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\evolution_graphic_texture_loader.cpp">
+      <Filter>ソース ファイル\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_sampler_state.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_rasterrizer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_blend_state.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_depth_stencil_state.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_constant_buffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\texture\evolution_graphic_texture_load_handle.cpp">
+      <Filter>ソース ファイル\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\evolution_graphic_depthbuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\texture\DirectXTex\DirectXTex.inl">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+    <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC6HEncode_EncodeBlockCS.inc">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+    <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC6HEncode_TryModeG10CS.inc">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+    <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC6HEncode_TryModeLE10CS.inc">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+    <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC7Encode_EncodeBlockCS.inc">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+    <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC7Encode_TryMode02CS.inc">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+    <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC7Encode_TryMode137CS.inc">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+    <None Include="..\src\texture\DirectXTex\Shaders\Compiled\BC7Encode_TryMode456CS.inc">
+      <Filter>ソース ファイル\texture\directXtex</Filter>
+    </None>
+  </ItemGroup>
+</Project>
