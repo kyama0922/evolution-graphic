@@ -367,7 +367,11 @@ namespace EVOLUTION{
             //フレームバッファの作成
             virtual GraphicResult::_RESULT CreateFrameBuffer(IFrameBuffer** frame_buffer, IGraphicCommand* command, s32 width, s32 heigth, FORMAT_TYPE::_FORMAT_TYPE format) = 0;
             //バッファの作成
-            virtual GraphicResult::_RESULT CreateVertexBuffer(IBuffer** buffer, IGraphicCommand* command, void* buffer_address, u32 buffer_count, u32 single_size) = 0;
+            virtual GraphicResult::_RESULT CreateVertexBuffer(IBuffer** buffer, IGraphicCommand* command, const void* buffer_address, u32 buffer_count, u32 single_size) = 0;
+            //バッファの作成
+            virtual GraphicResult::_RESULT CreateIndexBuffer(IBuffer** buffer, IGraphicCommand* command, const u16* index_buffer_address, u32 buffer_count) = 0;
+            //バッファの作成
+            virtual GraphicResult::_RESULT CreateIndexBuffer(IBuffer** buffer, IGraphicCommand* command, const u32* index_buffer_address, u32 buffer_count) = 0;
             //レンダリングパイプラインの作成
             virtual GraphicResult::_RESULT CreateRenderingPipeline(IRenderingPipeline** rendering_pipeline, IGraphicCommand* command) = 0;
             //グラフィックコマンドの作成

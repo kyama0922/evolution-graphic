@@ -460,7 +460,13 @@ GraphicResult::_RESULT RenderingPipeline::Execute(const CommandProperty& command
     //インデックスバッファのClear
     if (this->m_command_data.mp_index_buffer)
     {
-        context->IASetIndexBuffer(this->m_command_data.mp_index_buffer->GetID3D11Buffer(), (DXGI_FORMAT)FORMAT_TYPE::_R32_UINT , 0);
+        if (this->m_command_data.mp_index_buffer->GetSingleSize() == 2)
+        {
+            context->IASetIndexBuffer(this->m_command_data.mp_index_buffer->GetID3D11Buffer(), (DXGI_FORMAT)FORMAT_TYPE::_R16_UINT, 0);
+        }
+        else{
+            context->IASetIndexBuffer(this->m_command_data.mp_index_buffer->GetID3D11Buffer(), (DXGI_FORMAT)FORMAT_TYPE::_R32_UINT, 0);
+        }
     }
 
     context->IASetPrimitiveTopology((D3D11_PRIMITIVE_TOPOLOGY)command->m_primitive_topology);
