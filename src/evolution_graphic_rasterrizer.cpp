@@ -245,7 +245,7 @@ void RasterrizerState::SetProperty(FILL_MODE::_MODE type){
         this->m_desc.FillMode = D3D11_FILL_WIREFRAME;
         break;
     case EVOLUTION::GRAPHIC::FILL_MODE::SOLID:
-        this->m_desc.FillMode = D3D11_FILL_WIREFRAME;
+        this->m_desc.FillMode = D3D11_FILL_SOLID;
         break;
     }
 }
