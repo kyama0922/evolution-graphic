@@ -11,17 +11,17 @@ u32 TextureLoadHandle::AddRef(){
 }
 
 RESULT TextureLoadHandle::QueryInterface(EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_ITextureLoadHandle))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_ITextureLoadHandle))
     {
         *ppvObject = static_cast<ITextureLoadHandle*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_TextureLoadHandle))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_TextureLoadHandle))
     {
         *ppvObject = static_cast<TextureLoadHandle*>(this);
         this->AddRef();

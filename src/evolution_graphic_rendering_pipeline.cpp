@@ -18,22 +18,22 @@ u32 RenderingPipeline::AddRef(){
 }
 
 RESULT RenderingPipeline::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
     {
         *ppvObject = static_cast<IGraphicD3DExecute *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IRenderingPipeline))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IRenderingPipeline))
     {
         *ppvObject = static_cast<IRenderingPipeline *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_RenderingPipeline))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_RenderingPipeline))
     {
         *ppvObject = static_cast<RenderingPipeline *>(this);
         this->AddRef();

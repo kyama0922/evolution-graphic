@@ -12,27 +12,27 @@ u32 ConstantBuffer::AddRef(){
 }
 
 RESULT ConstantBuffer::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
     {
         *ppvObject = static_cast<IGraphicD3DExecute*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IBuffer))
     {
         *ppvObject = static_cast<IBuffer*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IConstantBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IConstantBuffer))
     {
         *ppvObject = static_cast<IConstantBuffer*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_ConstantBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_ConstantBuffer))
     {
         *ppvObject = static_cast<ConstantBuffer*>(this);
         this->AddRef();

@@ -10,27 +10,27 @@ u32 Texture2D::AddRef(){
 }
 
 RESULT Texture2D::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IShaderResource))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IShaderResource))
     {
         *ppvObject = static_cast<IShaderResource *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_ITexture))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_ITexture))
     {
         *ppvObject = static_cast<ITexture *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_ITexture2D))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_ITexture2D))
     {
         *ppvObject = static_cast<ITexture2D *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_Texture2D))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_Texture2D))
     {
         *ppvObject = static_cast<Texture2D *>(this);
         this->AddRef();

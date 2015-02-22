@@ -48,17 +48,17 @@ u32 GraphicFactory::AddRef(){
 }
 
 RESULT GraphicFactory::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IGraphicFactory))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IGraphicFactory))
     {
         *ppvObject = static_cast<IGraphicFactory*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_GraphicFactory))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_GraphicFactory))
     {
         *ppvObject = static_cast<GraphicFactory*>(this);
         this->AddRef();

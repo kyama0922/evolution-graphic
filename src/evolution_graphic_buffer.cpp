@@ -14,22 +14,22 @@ u32 Buffer::AddRef(){
 }
 
 RESULT Buffer::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
     {
         *ppvObject = static_cast<IGraphicD3DExecute*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IBuffer))
     {
         *ppvObject = static_cast<IBuffer*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_Buffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_Buffer))
     {
         *ppvObject = static_cast<Buffer*>(this);
         this->AddRef();

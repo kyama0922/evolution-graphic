@@ -16,17 +16,17 @@ u32 ShaderChain::AddRef(){
 }
 
 RESULT ShaderChain::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IShaderChain))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IShaderChain))
     {
         *ppvObject = static_cast<IShaderChain*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_ShaderChain))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_ShaderChain))
     {
         *ppvObject = static_cast<ShaderChain*>(this);
         this->AddRef();

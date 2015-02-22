@@ -11,17 +11,17 @@ u32 GraphicCommand::AddRef(){
 }
 
 RESULT GraphicCommand::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IGraphicCommand))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IGraphicCommand))
     {
         *ppvObject = static_cast<IGraphicCommand*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_GraphicCommand))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_GraphicCommand))
     {
         *ppvObject = static_cast<GraphicCommand*>(this);
         this->AddRef();

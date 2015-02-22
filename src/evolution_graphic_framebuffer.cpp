@@ -12,22 +12,22 @@ u32 FrameBuffer::AddRef(){
 
 RESULT FrameBuffer::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
 
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IFrameBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IFrameBuffer))
     {
         *ppvObject = static_cast<IFrameBuffer*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
     {
         *ppvObject = static_cast<IGraphicD3DExecute*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_FrameBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_FrameBuffer))
     {
         *ppvObject = static_cast<FrameBuffer*>(this);
         this->AddRef();

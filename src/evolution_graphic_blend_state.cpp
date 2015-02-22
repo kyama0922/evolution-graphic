@@ -13,12 +13,12 @@ u32 BlendStateProperty::AddRef(){
 }
 
 RESULT BlendStateProperty::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_BlendStateProperty))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_BlendStateProperty))
     {
         *ppvObject = static_cast<BlendStateProperty *>(this);
         this->AddRef();
@@ -72,17 +72,17 @@ u32 BlendState::AddRef(){
 }
 
 RESULT BlendState::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IBlendState))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IBlendState))
     {
         *ppvObject = static_cast<IBlendState *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_BlendState))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_BlendState))
     {
         *ppvObject = static_cast<BlendState *>(this);
         this->AddRef();

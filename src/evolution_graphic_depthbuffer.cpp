@@ -13,27 +13,27 @@ u32 DepthBuffer::AddRef(){
 }
 
 RESULT DepthBuffer::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IGraphicD3DExecute))
     {
         *ppvObject = static_cast<IGraphicD3DExecute*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_ITexture2D))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_ITexture2D))
     {
         *ppvObject = static_cast<ITexture2D*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IDepthBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IDepthBuffer))
     {
         *ppvObject = static_cast<IDepthBuffer*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_DepthBuffer))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_DepthBuffer))
     {
         *ppvObject = static_cast<DepthBuffer*>(this);
         this->AddRef();

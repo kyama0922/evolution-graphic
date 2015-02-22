@@ -26,17 +26,17 @@ u32 SamplerState::AddRef(){
 }
 
 RESULT SamplerState::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_ISamplerState))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_ISamplerState))
     {
         *ppvObject = static_cast<ISamplerState *>(this);
         this->AddRef();
     }
-    else if(IsEqualGUID(riid, EVOLUTION_GUID::IID_SamplerState))
+    else if(EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_SamplerState))
     {
         *ppvObject = static_cast<SamplerState *>(this);
         this->AddRef();

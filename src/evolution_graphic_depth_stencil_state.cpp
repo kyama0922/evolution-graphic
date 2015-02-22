@@ -13,12 +13,12 @@ u32 DepthStencilProperty::AddRef(){
 }
 
 RESULT DepthStencilProperty::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_DepthStencilProperty))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_DepthStencilProperty))
     {
         *ppvObject = static_cast<DepthStencilProperty *>(this);
         this->AddRef();
@@ -72,17 +72,17 @@ u32 DepthStencilState::AddRef(){
 }
 
 RESULT DepthStencilState::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IDepthStencilState))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IDepthStencilState))
     {
         *ppvObject = static_cast<IDepthStencilState *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_DepthStencilState))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_DepthStencilState))
     {
         *ppvObject = static_cast<DepthStencilState *>(this);
         this->AddRef();
